@@ -1,7 +1,7 @@
 
 var option = {};
-option.apikey = "<LoginRadius-API-Key>";
-option.appName = "<LoginRadius-Site-Name>";
+option.apikey = "94dd8825-669d-44f3-ae1a-5f0828016ae6";
+option.appName = "http://lr-candidate-demo3.hub.loginradius.com/";
 option.V2Recaptcha = true;
 option.inFormvalidationMessage = true;
 option.enableLoginOnEmailVerification = true;
