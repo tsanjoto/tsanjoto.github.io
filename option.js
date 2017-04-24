@@ -1,8 +1,8 @@
 
 var option = {};
-option.apikey = "94dd8825-669d-44f3-ae1a-5f0828016ae6";
-option.appName = "lr-candidate-demo3";
-//"http://lr-candidate-demo3.hub.loginradius.com/";
+option.apikey = "aad1d378-8613-429b-b728-bb2550e453f3";
+option.appName = "lr-thompson";
+//"http://lr-thompson.hub.loginradius.com/";
 option.V2Recaptcha = false;
 option.inFormvalidationMessage = true;
 option.enableLoginOnEmailVerification = true;
