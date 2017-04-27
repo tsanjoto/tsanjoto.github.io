@@ -4,6 +4,20 @@ var message = {
 
 };
 
+var indo = {
+    "labels": { "emailid":  "MASUKIN EMAIL LO",   "password":  "KATA SANDI"  },
+    "placeholders": { "emailid":  "asdf@gmail.com ",   "password":  "sandi " },
+    "validationMessages": [
+                            {   "rule":  "required",   "message":  "%s perlu dimasukan"  },
+                            {   "rule":  "valid_email",   "message":  "%s formatnya salah"  }
+                            ],
+    "errorMessages": [
+                       {   "code": 966,   "message":  "Salah password atau email ",   "description":  "Anda salah masukin password atau email, coba lagi dengan email dan password yang benar"  },
+                       {   "code": 967,   "message":  "Salah password",   "description":  "Andsa salah masukin password"  },
+                       {   "code": 901,   "message":  "Salah Kunci API",   "description":  "Kunci LoginRadius API itu salah atau tidak ada kuasa, tolong pakai kunci LoginRadius yang benar atau cek kunci APInya di LoginRadius accountmu."  }
+                       ]
+}
+
 function setCookie(cname, cvalue, exdays) {
 
     var d = new Date();
@@ -240,10 +254,7 @@ function show_action_interface(action) {
 
         $SL.util.ready(function() {
 
-           LoginRadiusRaaS.$hooks.setFormCustomLabel({
-             "emailid" : "OI INI EMAIL",
-             "password" : "ASDSADASDDAS"
-           });
+           LoginRadiusRaaS.$hooks.setFormCustomLabel(indo);
                        
             LoginRadiusRaaS.init(raasoption, action, function(response) {
 
