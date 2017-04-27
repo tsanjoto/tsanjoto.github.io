@@ -3,38 +3,19 @@ var message = {
     "password_changed": "Reset password berhasil, login untuk masuk app ini"
 
 };
-/*
-var indo = {
-    "labels": { "emailid":  "MASUKIN EMAIL LO",   "password":  "KATA SANDI"  },
-    "placeholders": { "emailid":  "asdf@gmail.com ",   "password":  "sandi " },
-    "validationMessages": [
-                            {   "rule":  "required",   "message":  "%s perlu dimasukan"  },
-                            {   "rule":  "valid_email",   "message":  "%s formatnya salah"  }
-                            ],
-    "errorMessages": [
-                       {   "code": 966,   "message":  "Salah password atau email ",   "description":  "Anda salah masukin password atau email, coba lagi dengan email dan password yang benar"  },
-                       {   "code": 967,   "message":  "Salah password",   "description":  "Andsa salah masukin password"  },
-                       {   "code": 901,   "message":  "Salah Kunci API",   "description":  "Kunci LoginRadius API itu salah atau tidak ada kuasa, tolong pakai kunci LoginRadius yang benar atau cek kunci APInya di LoginRadius accountmu."  }
-                       ]
-}*/
 
-var lrLanguage = [
-                  {
-                  "Language": "French",
-                  "Orginal": "Email Id",
-                  "Translated": "Adresse e-mail",
-                  },
-                  {
-                  "Language": "French",
-                  "Orginal": "Password",
-                  "Translated": "Mot de passe",
-                  },
-                  {
-                  "Language": "French",
-                  "Orginal": "Confirm Password",
-                  "Translated": "Confirmer mot de passe",
-                  }
-                  ]
+var french = {
+    "labels ": { "emailid ":  "Adresse e-mail ",   "password ":  "Mot de passe "  },
+    "placeholders ": { "emailid ":  "Entrez votre e-mail id ",   "password ":  "Entrez votre mot de passe " },
+    "validationMessages ": [
+                            {   "rule ":  "required ",   "message ":  "Le champ %s n'est requis. "  },
+                            {   "rule ":  "valid_email ",   "message ":  "Le champ %s doit contenir une adresse e-mail valide. "  }
+                            ],
+    "errorMessages ": [
+                       {   "code ": 966,   "message ":  "Nom d'utilisateur Mot de passe sont erron s ",   "description ":  "Nom d'utilisateur Mot de passe sont erron s, veuillez entrer la bonne combinaison de nom d'utilisateur Mot de passe "  },
+                       {   "code ": 967,   "message ":  "Id d'e-mail n'est pas format  valide ",   "description ":  "Id d'e-mail n'est pas format  valide "  },
+                       {   "code ": 901,   "message ":  "La cl  de l'API n'est pas valide ",   "description ":  "La cl  API LoginRadius fournis est non valide ou n'est pas autoris e, veuillez utiliser une cl  d'API LoginRadius valide ou v rifiez la cl  d'API pour votre compte LoginRadius. "  }
+                       ] }
 
 function setCookie(cname, cvalue, exdays) {
 
@@ -272,8 +253,9 @@ function show_action_interface(action) {
 
         $SL.util.ready(function() {
 
-            LoginRadiusRaaS.$hooks.setFormCustomLabel(indo);
-
+            LoginRadiusRaaS.$hooks.setLocaleBasedInfo(french);
+                       
+                       
             LoginRadiusRaaS.init(raasoption, action, function(response) {
 
                 // On Success
