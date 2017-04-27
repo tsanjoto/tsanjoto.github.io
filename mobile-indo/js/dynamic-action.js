@@ -254,9 +254,9 @@ function show_action_interface(action) {
 
         $SL.util.ready(function() {
 
-                       
+            LoginRadiusRaaS.$hooks.setFormCustomLabel(indo);
+
             LoginRadiusRaaS.init(raasoption, action, function(response) {
-                LoginRadiusRaaS.$hooks.setFormCustomLabel(indo);
 
                 // On Success
                 console.log(response);
