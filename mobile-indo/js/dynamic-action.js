@@ -5,7 +5,8 @@ var message = {
 };
 
 var indo = {
-    "labels ": { "emailid ":  "MASUKIN EMAIL LO",   "password ":  "KATA SANDI"  },
+    "emailid ":  "MASUKIN EMAIL LO",
+    "password ":  "KATA SANDI",
     "placeholders ": { "emailid ":  "asdf@gmail.com ",   "password ":  "sandi " },
     "validationMessages ": [
                             {   "rule ":  "required ",   "message ":  "%s perlu dimasukan "  },
