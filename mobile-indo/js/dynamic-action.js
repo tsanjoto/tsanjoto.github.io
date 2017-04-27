@@ -13,7 +13,8 @@ var french = {
                 "birthdate":    "Tanggal Lahir",
                 "gender": "Kelamin",
                 "username": "Nama User",
-                "newpassword": "Password Baru"
+                "newpassword": "Password Baru",
+                "country": "Negara"
             },
     "placeholders": { "emailid":  "Masukin Email",
         "password":  "Kata Sandi",
@@ -23,7 +24,9 @@ var french = {
         "birthdate":    "Tanggal Lahir",
         "gender": "Kelamin",
         "username": "Nama User",
-        "newpassword": "Password Baru"
+        "newpassword": "Password Baru",
+        "country": "Negara"
+
     },
     "validationMessages": [
                             {   "rule":  "required",   "message":  "Properti %s tidak boleh kosong"  },
