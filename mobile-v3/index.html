@@ -1,0 +1,49 @@
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <title>LoginRadius User Registration Mobile Center Host</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" type="text/css" media="all" href="css/jsDatePick_ltr.min.css" />
+        <script src="https://cdn.loginradius.com/hub/prod/js/LoginRadius.1.0.js"></script>
+        <script src="//cdn.loginradius.com/hub/prod/js/LoginRadiusRaaS.js"></script>
+        <script src="js/LoginRadiusSDK2.0.0.js"></script>
+        <script type="text/javascript" src="js/jsDatePick.min.1.3.js"></script>
+  <script type="text/html" id="loginradiuscustom_tmpl">
+        <span class="lr-provider-label lr-sl-shaded-brick-button lr-flat-<#=Name.toLowerCase()#>"
+        onclick="return $SL.util.openWindow('<#= Endpoint #>&is_access_token=true&callback=<#= window.location #>');"	
+        title="Sign up with <#= Name #>" alt="Sign in with <#=Name#>" >		
+            <span class="lr-sl-icon lr-sl-icon-<#=Name.toLowerCase()#>"></span>	
+            Sign up with <#=Name#>			</span>	
+    </script>	
+    <script type="text/html" id="loginradiuscustom_tmpl_IOS">
+        <span id="<#= Name #>-link" class="lr-provider-label lr-sl-shaded-brick-button lr-flat-<#=Name.toLowerCase()#>"
+        onclick="window.location.href='<#= Endpoint #>&is_access_token=true&callback=<#= window.location.href #>&callbacktype=hash';"
+        title="Sign in with <#= Name #>" alt="Sign in with <#=Name#>" >	
+            <span class="lr-sl-icon lr-sl-icon-<#=Name.toLowerCase()#>"></span>
+            Sign up with <#=Name#>
+        </span>
+    </script>
+</head>
+<body>
+    <div class="lr-touch-container">
+        <div class="lr-touch-frame lr-separator">
+            <div id="social-custom-container"class="interfacecontainerdiv lr-sl-shaded-brick-frame"></div>
+            <div id="action-container" class="action-container"></div>
+            <div id="social-login-container"></div>
+            <div id="error-msg">
+                <ul id="error-ul"></ul>
+            </div>
+            <div class="link-box cf" id="registerLink" style="display:none;">
+                <a id='alreadyAccount' onclick = "javascript: show_login();">Sign In</a>
+                <a id='registerAcc' onclick = "javascript: show_registration();">Register</a>
+                <a style="display:none;float:right;" id='forgotPassword' onclick = "javascript: forgot_password();">Forgot Password</a>
+            </div>
+            <div id="notice" class="hidden"></div>
+        </div>
+    </div>
+    <script src="js/dynamic-action.js"></script>
+  
+</body>
+</html>
