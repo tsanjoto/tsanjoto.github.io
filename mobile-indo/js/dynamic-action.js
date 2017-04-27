@@ -14,7 +14,8 @@ var french = {
     "errorMessages": [
                        {   "code": 966,   "message":  "salah email atau sandi ",   "description":  "isi lagi email atau sandi yang benar"  },
                        {   "code": 967,   "message":  "salah password",   "description":  "isi password yang benar "  },
-                       {   "code": 901,   "message":  "salah kunci api",   "description":  "salah kunci login radius api atau kuncinya tidak ada kuasa. Isi kunci yang benar atau cek ke LoginRadius account"  }
+                       {   "code": 901,   "message":  "salah kunci api",   "description":  "salah kunci login radius api atau kuncinya tidak ada kuasa. Isi kunci yang benar atau cek ke LoginRadius account"  },
+                       {   "code": 938,   "message":  "user tidak ada",   "description":  "user tidak ada, bikin user baru dahulu sebelum login" }
                        ] }
 
 function setCookie(cname, cvalue, exdays) {
