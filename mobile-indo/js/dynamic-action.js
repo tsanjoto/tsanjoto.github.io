@@ -5,16 +5,16 @@ var message = {
 };
 
 var french = {
-    "labels": { "emailid":  "Adresse e-mail ",   "password":  "Mot de passe "  },
-    "placeholders": { "emailid":  "Entrez votre e-mail id ",   "password":  "Entrez votre mot de passe " },
+    "labels": { "emailid":  "Masukin Email",   "password":  "Kata Sandi"  },
+    "placeholders": { "emailid":  "Email lo",   "password":  "Kata Sandi" },
     "validationMessages": [
-                            {   "rule":  "required ",   "message":  "Le champ %s n'est requis. "  },
-                            {   "rule":  "valid_email ",   "message":  "Le champ %s doit contenir une adresse e-mail valide. "  }
+                            {   "rule":  "required",   "message":  "Properti %s tidak boleh kosong"  },
+                            {   "rule":  "valid_email",   "message":  "Properti %s formatnya tidak benar. Musti format email"  }
                             ],
     "errorMessages": [
-                       {   "code": 966,   "message":  "Nom d'utilisateur Mot de passe sont erron s ",   "description":  "Nom d'utilisateur Mot de passe sont erron s, veuillez entrer la bonne combinaison de nom d'utilisateur Mot de passe "  },
-                       {   "code": 967,   "message":  "Id d'e-mail n'est pas format  valide ",   "description":  "Id d'e-mail n'est pas format  valide "  },
-                       {   "code": 901,   "message":  "La cl  de l'API n'est pas valide ",   "description":  "La cl  API LoginRadius fournis est non valide ou n'est pas autoris e, veuillez utiliser une cl  d'API LoginRadius valide ou v rifiez la cl  d'API pour votre compte LoginRadius. "  }
+                       {   "code": 966,   "message":  "salah email atau sandi ",   "description":  "isi lagi email atau sandi yang benar"  },
+                       {   "code": 967,   "message":  "salah password",   "description":  "isi password yang benar "  },
+                       {   "code": 901,   "message":  "salah kunci api",   "description":  "salah kunci login radius api atau kuncinya tidak ada kuasa. Isi kunci yang benar atau cek ke LoginRadius account"  }
                        ] }
 
 function setCookie(cname, cvalue, exdays) {
