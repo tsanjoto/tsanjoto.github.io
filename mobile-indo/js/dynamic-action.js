@@ -3,13 +3,7 @@ var message = {
     "password_changed": "Reset password berhasil, login untuk masuk app ini"
 
 };
-{
-    "emailid" : "MASUKIN EMAIL LO",
-    "password" : "KATA SANDI",
-    "forgotPassword": "Lupa Password",
-    "registerAcc": "Account Baru",
-    "alreadyAccount": "Masuk"
-}
+
 var indo = {
     "labels ": { "emailid ":  "MASUKIN EMAIL LO",   "password ":  "KATA SANDI"  },
     "placeholders ": { "emailid ":  "asdf@gmail.com ",   "password ":  "sandi " },
