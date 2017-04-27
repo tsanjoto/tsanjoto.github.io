@@ -241,8 +241,11 @@ function show_action_interface(action) {
         $SL.util.ready(function() {
 
            LoginRadiusRaaS.$hooks.setFormCustomLabel({
-             "emailid" : "OI INI EMAIL",
-             "password" : "ASDSADASDDAS"
+             "emailid" : "MASUKIN EMAIL LO",
+             "password" : "KATA SANDI",
+             "forgotPassword": "Lupa Password",
+             "registerAcc": "Account Baru",
+             "alreadyAccount": "Masuk"
            });
                        
             LoginRadiusRaaS.init(raasoption, action, function(response) {
