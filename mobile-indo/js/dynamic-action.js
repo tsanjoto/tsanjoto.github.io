@@ -3,7 +3,7 @@ var message = {
     "password_changed": "Reset password berhasil, login untuk masuk app ini"
 
 };
-
+/*
 var indo = {
     "labels": { "emailid":  "MASUKIN EMAIL LO",   "password":  "KATA SANDI"  },
     "placeholders": { "emailid":  "asdf@gmail.com ",   "password":  "sandi " },
@@ -16,7 +16,25 @@ var indo = {
                        {   "code": 967,   "message":  "Salah password",   "description":  "Andsa salah masukin password"  },
                        {   "code": 901,   "message":  "Salah Kunci API",   "description":  "Kunci LoginRadius API itu salah atau tidak ada kuasa, tolong pakai kunci LoginRadius yang benar atau cek kunci APInya di LoginRadius accountmu."  }
                        ]
-}
+}*/
+
+var lrLanguage = [
+                  {
+                  "Language": "French",
+                  "Orginal": "Email Id",
+                  "Translated": "Adresse e-mail",
+                  },
+                  {
+                  "Language": "French",
+                  "Orginal": "Password",
+                  "Translated": "Mot de passe",
+                  },
+                  {
+                  "Language": "French",
+                  "Orginal": "Confirm Password",
+                  "Translated": "Confirmer mot de passe",
+                  }
+                  ]
 
 function setCookie(cname, cvalue, exdays) {
 
