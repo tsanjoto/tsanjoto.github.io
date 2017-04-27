@@ -5,16 +5,16 @@ var message = {
 };
 
 var french = {
-    "labels ": { "emailid ":  "Adresse e-mail ",   "password ":  "Mot de passe "  },
-    "placeholders ": { "emailid ":  "Entrez votre e-mail id ",   "password ":  "Entrez votre mot de passe " },
-    "validationMessages ": [
-                            {   "rule ":  "required ",   "message ":  "Le champ %s n'est requis. "  },
-                            {   "rule ":  "valid_email ",   "message ":  "Le champ %s doit contenir une adresse e-mail valide. "  }
+    "labels": { "emailid":  "Adresse e-mail ",   "password":  "Mot de passe "  },
+    "placeholders": { "emailid":  "Entrez votre e-mail id ",   "password":  "Entrez votre mot de passe " },
+    "validationMessages": [
+                            {   "rule":  "required ",   "message":  "Le champ %s n'est requis. "  },
+                            {   "rule":  "valid_email ",   "message":  "Le champ %s doit contenir une adresse e-mail valide. "  }
                             ],
-    "errorMessages ": [
-                       {   "code ": 966,   "message ":  "Nom d'utilisateur Mot de passe sont erron s ",   "description ":  "Nom d'utilisateur Mot de passe sont erron s, veuillez entrer la bonne combinaison de nom d'utilisateur Mot de passe "  },
-                       {   "code ": 967,   "message ":  "Id d'e-mail n'est pas format  valide ",   "description ":  "Id d'e-mail n'est pas format  valide "  },
-                       {   "code ": 901,   "message ":  "La cl  de l'API n'est pas valide ",   "description ":  "La cl  API LoginRadius fournis est non valide ou n'est pas autoris e, veuillez utiliser une cl  d'API LoginRadius valide ou v rifiez la cl  d'API pour votre compte LoginRadius. "  }
+    "errorMessages": [
+                       {   "code": 966,   "message":  "Nom d'utilisateur Mot de passe sont erron s ",   "description":  "Nom d'utilisateur Mot de passe sont erron s, veuillez entrer la bonne combinaison de nom d'utilisateur Mot de passe "  },
+                       {   "code": 967,   "message":  "Id d'e-mail n'est pas format  valide ",   "description":  "Id d'e-mail n'est pas format  valide "  },
+                       {   "code": 901,   "message":  "La cl  de l'API n'est pas valide ",   "description":  "La cl  API LoginRadius fournis est non valide ou n'est pas autoris e, veuillez utiliser une cl  d'API LoginRadius valide ou v rifiez la cl  d'API pour votre compte LoginRadius. "  }
                        ] }
 
 function setCookie(cname, cvalue, exdays) {
