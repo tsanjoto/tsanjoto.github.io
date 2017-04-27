@@ -5,11 +5,33 @@ var message = {
 };
 
 var french = {
-    "labels": { "emailid":  "Masukin Email",   "password":  "Kata Sandi"  },
-    "placeholders": { "emailid":  "Email lo",   "password":  "Kata Sandi" },
+    "labels": { "emailid":  "Masukin Email",
+                "password":  "Kata Sandi",
+                "firstname": "Nama Depan",
+                "lasttname": "Name Belakang",
+                "confirmpassword": "Konfirmasi Kata Sandi",
+                "birthdate":    "Tanggal Lahir",
+                "gender": "Kelamin",
+                "username": "Nama User",
+                "newpassword": "Password Baru"
+            },
+    "placeholders": { "emailid":  "Masukin Email",
+        "password":  "Kata Sandi",
+        "firstname": "Nama Depan",
+        "lasttname": "Name Belakang",
+        "confirmpassword": "Konfirmasi Kata Sandi",
+        "birthdate":    "Tanggal Lahir",
+        "gender": "Kelamin",
+        "username": "Nama User",
+        "newpassword": "Password Baru"
+    },
     "validationMessages": [
                             {   "rule":  "required",   "message":  "Properti %s tidak boleh kosong"  },
-                            {   "rule":  "valid_email",   "message":  "Properti %s formatnya tidak benar. Musti format email"  }
+                            {   "rule":  "valid_email",   "message":  "Properti %s formatnya tidak benar. Musti format email"  },
+                            {   "rule":  "min_length",   "message":  "Properti %s minimal"  },
+                            {   "rule":  "max_length",   "message":  "Properti %s maximal"  },
+                            {   "rule":  "matches",   "message":  "Properti %s tidak sama"  },
+                            {   "rule":  "callback_valid_date",   "message":  "%s tidak valid"  },
                             ],
     "errorMessages": [
                        {   "code": 966,   "message":  "salah email atau sandi ",   "description":  "isi lagi email atau sandi yang benar"  },
