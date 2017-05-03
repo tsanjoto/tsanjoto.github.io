@@ -4,10 +4,13 @@
 		<title>Social Login | LR User Registration</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="google-analytics.js"></script>
 		<!-- LoginRadius -->
+        <script src="LoginRadiusSDK.2.0.1.js"></script>
 		<script src="//hub.loginradius.com/include/js/LoginRadius.js"></script>
 		<script src="//cdn.loginradius.com/hub/prod/js/LoginRadiusRaaS.js"></script>
-        <script src="google-analytics.js"></script>
+        <script src="//cdn.loginradius.com/hub/prod/js/lr-google-analyitcs.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<h3><a href="index.html">Home Page</a></h3>
@@ -15,7 +18,17 @@
 		<div class="socialcontainer" id="socialcontainer"></div>
 	
 		<script type="text/html" id="loginradiuscustom_tmpl">
-		    <a class="lr-provider-label" href="javascript:void(0)" onclick="return  $SL.util.openWindow('<#= Endpoint #>&is_access_token=true&callback=<#= window.location #>');" title="<#= Name #>" alt="Sign in with <#=Name#>">
+		    <a
+            class="lr-provider-label"
+            href="javascript:void(0)"
+            onclick="return  $SL.util.openWindow('<#= Endpoint #>&is_access_token=true&callback=<#= window.location #>');"
+            title="<#= Name #>"
+            alt="Sign in with <#=Name#>"
+            data-lrga="social"
+            data-lrga-provider="<#=provider#>"
+            data-lrga-action="<#=action#>"
+            data-lrga-target="<#=target#>"
+            >
 		        <h3><#=Name#></h3>
 		    </a>
 		</script>
@@ -25,8 +38,11 @@
 		<script type="text/javascript">
 			$SL.util.ready(function() {
 				var raasoption = option;
+                $ui = $SL.lr_login_settings;
+                           
 				raasoption.templatename = "loginradiuscustom_tmpl";
 				raasoption.hashTemplate = true;
+                $ui.is_access_token = 1;
 				LoginRadiusRaaS.CustomInterface(".interfacecontainerdiv", raasoption);
 
 				LoginRadiusRaaS.init(raasoption, 'sociallogin', function(response) {
@@ -37,6 +53,29 @@
 						console.log(errors);
 				}, "socialcontainer");
 			});
+            
+            LoginRadiusSDK.setLoginCallback(function () {
+                var token = LoginRadiusSDK.getToken();
+                
+                LoginRadiusSDK.getUserprofile( function(userprofile) {
+                                              
+                  ga( 'set', '&uid', userprofile.ID );
+                  
+                  var form = document.createElement('form');
+                  var hiddenToken = document.createElement('input');
+                  
+                  form.action = $SL.lr_login_settings.callback;
+                  form.method = 'POST';
+                  
+                  hiddenToken.type = 'hidden';
+                  hiddenToken.value = token;
+                  hiddenToken.name = 'token';
+                  
+                  form.appendChild(hiddenToken);
+                  document.body.appendChild(form);
+                  } );
+            });
+            
 		</script>
 	</body>
 </html>
