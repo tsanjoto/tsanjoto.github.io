@@ -22,12 +22,9 @@
 		    <a
             class="lr-provider-label"
             href="javascript:void(0)"
-            onclick="return  $SL.util.openWindow('<#= Endpoint #>&is_access_token=true&callback=<#= window.location #>');"
+            onclick="return  $SL.util.providerLogin(('<#= Endpoint #>&is_access_token=true&callback=<#= window.location #>');"
             title="<#= Name #>"
             alt="Sign in with <#=Name#>"
-            data-lrga="social"
-            data-lrga-provider="<#=Name#>"
-            data-lrga-action="login"
             >
 		        <h3><#=Name#></h3>
 		    </a>
