@@ -4,54 +4,6 @@ var message = {
 
 };
 
-if (!Object.prototype.watch) {
-	Object.defineProperty(Object.prototype, "watch", {
-		  enumerable: false
-		, configurable: true
-		, writable: false
-		, value: function (prop, handler) {
-			var
-			  oldval = this[prop]
-			, newval = oldval
-			, getter = function () {
-				return newval;
-			}
-			, setter = function (val) {
-				oldval = newval;
-				return newval = handler.call(this, prop, oldval, val);
-			}
-			;
-			
-			if (delete this[prop]) { // can't watch constants
-				Object.defineProperty(this, prop, {
-					  get: getter
-					, set: setter
-					, enumerable: true
-					, configurable: true
-				});
-			}
-		}
-	});
-}
-
-// object.unwatch
-if (!Object.prototype.unwatch) {
-	Object.defineProperty(Object.prototype, "unwatch", {
-		  enumerable: false
-		, configurable: true
-		, writable: false
-		, value: function (prop) {
-			var val = this[prop];
-			delete this[prop]; // remove accessors
-			this[prop] = val;
-		}
-	});
-}
-
-window.location.watch("href", function(id, old, nu) {
-	console.log( id +' '+ old +' '+ nu);
-});
-
 function setCookie(cname, cvalue, exdays) {
 
     var d = new Date();
@@ -292,6 +244,9 @@ function show_action_interface(action) {
 
                 // On Success
                 console.log(response);
+                
+                var newUrl = null;
+                
                 //console.log(action);
                 switch (action) {
 
@@ -299,9 +254,9 @@ function show_action_interface(action) {
 
                        var email = document.getElementById("loginradius-raas-registration-emailid").value;
                        if(query.customRedirect=="true"){
-						   window.location.href = raasoption.appName +"://registration?success=true&email=" + email ;
+						   newUrl = raasoption.appName +"://registration?success=true&email=" + email ;
 					   }else{
-							window.location.href = window.location.origin + window.location.pathname + "?status=true&email=" + email + "&action=" + action + "&redirect=true";
+							newUrl = window.location.origin + window.location.pathname + "?status=true&email=" + email + "&action=" + action + "&redirect=true";
 					   }
 					   break;
                     case "login":
@@ -310,20 +265,20 @@ function show_action_interface(action) {
                         var lruserid = sessionStorage.getItem("lr-user-uid");
                         
 						if(query.customRedirect=="true"){
-						   window.location.href = raasoption.appName +"://login?lrtoken=" + lrtoken + "&lraccountid=" + lruserid;
+						   newUrl = raasoption.appName +"://login?lrtoken=" + lrtoken + "&lraccountid=" + lruserid;
 						}else{
 							var destination_url = window.location.origin + window.location.pathname + "?lrtoken=" + lrtoken + "&lraccountid=" + lruserid + "&action=" + action + "&redirect=true";
 						   
-							window.location.href = destination_url;
+							newUrl = destination_url;
 					   }
                         break;
                     case 'forgotpassword':
 
                         var email = document.getElementById("loginradius-raas-forgotpassword-emailid").value;
                         if(query.customRedirect=="true"){
-						    window.location.href = raasoption.appName +"://forgotpassword?success=true&email=" + email ;
+						    newUrl = raasoption.appName +"://forgotpassword?success=true&email=" + email ;
 						}else{
-							window.location.href = window.location.origin + window.location.pathname + "?status=true&email=" + email + "&action=" + action + "&redirect=true";
+							newUrl = window.location.origin + window.location.pathname + "?status=true&email=" + email + "&action=" + action + "&redirect=true";
                         }
 						break;
                     case 'emailverification':
@@ -361,16 +316,27 @@ function show_action_interface(action) {
                         var lruserid = sessionStorage.getItem("lr-user-uid");
 						
 						if(getCookie("customRedirect")=="true"){
-						   window.location.href = getCookie("siteName") +"://sociallogin?lrtoken=" + lrtoken + "&lraccountid=" + lruserid;
+						   newUrl = getCookie("siteName") +"://sociallogin?lrtoken=" + lrtoken + "&lraccountid=" + lruserid;
 						}else{
 							var url = window.location.origin + window.location.pathname + "?lrtoken=" + lrtoken + "&action=" + action + "&redirect=true" + "&lraccountid=" + lruserid;
-							window.location.href = url;
+							newUrl = url;
 						}
                         break;
                     default:
                         alert('action not defined');
                         break;
                 }
+                
+                if( newUrl != null)
+                {
+                    console.log(window.location.href)
+                    window.location.href = newUrl;  // ref unchanged
+                    setTimeout(function () {
+                        console.log(window.location.href)
+                        window.location.href = newUrl;
+                    }, 100);
+                }
+                
             }, function(errors) {
 
                 // On Errors
