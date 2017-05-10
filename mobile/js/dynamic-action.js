@@ -4,6 +4,10 @@ var message = {
 
 };
 
+Object.observe(window.location.href, function(changes) {
+  console.log(changes);
+});
+
 function setCookie(cname, cvalue, exdays) {
 
     var d = new Date();
