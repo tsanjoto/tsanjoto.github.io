@@ -251,7 +251,7 @@ function show_action_interface(action) {
 
                        var email = document.getElementById("loginradius-raas-registration-emailid").value;
                        if(query.customRedirect=="true"){
-						   window.location = raasoption.appName +"://registration?success=true&email=" + email ;
+						   window.location.href = raasoption.appName +"://registration?success=true&email=" + email ;
 					   }else{
 							window.location.href = window.location.origin + window.location.pathname + "?status=true&email=" + email + "&action=" + action + "&redirect=true";
 					   }
@@ -262,7 +262,7 @@ function show_action_interface(action) {
                         var lruserid = sessionStorage.getItem("lr-user-uid");
                         
 						if(query.customRedirect=="true"){
-						   window.location = raasoption.appName +"://login?lrtoken=" + lrtoken + "&lraccountid=" + lruserid;
+						   window.location.href = raasoption.appName +"://login?lrtoken=" + lrtoken + "&lraccountid=" + lruserid;
 						}else{
 							var destination_url = window.location.origin + window.location.pathname + "?lrtoken=" + lrtoken + "&lraccountid=" + lruserid + "&action=" + action + "&redirect=true";
 						   
@@ -273,7 +273,7 @@ function show_action_interface(action) {
 
                         var email = document.getElementById("loginradius-raas-forgotpassword-emailid").value;
                         if(query.customRedirect=="true"){
-						    window.location = raasoption.appName +"://forgotpassword?success=true&email=" + email ;
+						    window.location.href = raasoption.appName +"://forgotpassword?success=true&email=" + email ;
 						}else{
 							window.location.href = window.location.origin + window.location.pathname + "?status=true&email=" + email + "&action=" + action + "&redirect=true";
                         }
@@ -313,7 +313,7 @@ function show_action_interface(action) {
                         var lruserid = sessionStorage.getItem("lr-user-uid");
 						
 						if(getCookie("customRedirect")=="true"){
-						   window.location = getCookie("siteName") +"://sociallogin?lrtoken=" + lrtoken + "&lraccountid=" + lruserid;
+						   window.location.href = getCookie("siteName") +"://sociallogin?lrtoken=" + lrtoken + "&lraccountid=" + lruserid;
 						}else{
 							var url = window.location.origin + window.location.pathname + "?lrtoken=" + lrtoken + "&action=" + action + "&redirect=true" + "&lraccountid=" + lruserid;
 							window.location.href = url;
