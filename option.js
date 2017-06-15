@@ -7,6 +7,9 @@ option.V2Recaptcha = false;
 option.inFormvalidationMessage = true;
 option.enableLoginOnEmailVerification = true;
 option.enableRememberMe = true;
+option.updateSecurityQuestion = "true";
+option.resetPasswordBySecurityQuestion = "true";
+
 /** You can directly bind it with the correct url, the string operation is just to dynamically bind them**/
 var path = window.location.href;
 option.emailVerificationUrl = path.replace(path.substr(path.lastIndexOf('/')), "/email-verification.html");
