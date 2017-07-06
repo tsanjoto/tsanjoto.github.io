@@ -21,7 +21,7 @@
     <script type="text/javascript">
     $SL.util.ready(function() {
 	    var raasoption = option;
-        LoginRadiusRaaS.$hooks.filterRegistrationSchema = function(regSchema, userprofile)
+        LoginRadiusRaaS.$hooks.filterRegistrationSchema = function(regSchema)
         {
             console.log("------")
             console.log(regSchema)
@@ -34,6 +34,8 @@
                 regSchema[i].value = "MY STATIC HIDDEN VALUE"
               }
             }
+            
+            console.log(regSchema)
         }
         
 	    LoginRadiusRaaS.init(raasoption, 'registration', function(response) {
@@ -43,6 +45,9 @@
 	    	alert('Error, please check console');
 	    	console.log(errors);
 	    }, "registration");
+        LoginRadiusRaaS.$hooks.setAttributes({
+            "cf_testhidden" : "value=hello"
+        })
     });
     </script>
 </html>
