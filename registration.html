@@ -37,7 +37,9 @@
             
             console.log(regSchema)
         }
-        
+        LoginRadiusRaaS.$hooks.setAttributes({
+            "cf_testhidden" : "value=hello"
+        });
 	    LoginRadiusRaaS.init(raasoption, 'registration', function(response) {
 	    	alert('Succeed, check console for more information');
 	    	console.log(response);
