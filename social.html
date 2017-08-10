@@ -40,6 +40,13 @@
 				raasoption.templatename = "loginradiuscustom_tmpl";
 				raasoption.hashTemplate = true;
                 $ui.is_access_token = 1;
+                if(navigator.userAgent.match('CriOS')||navigator.userAgent.match('iPhone')){
+                    // Is Chrome iOS or iPhone
+                    raasoption.templatename = "loginradiuscustom_tmpl_MOBILE";
+                } else {
+                    raasoption.templatename = "loginradiuscustom_tmpl";
+                }
+                
 				LoginRadiusRaaS.CustomInterface(".interfacecontainerdiv", raasoption);
 
 				LoginRadiusRaaS.init(raasoption, 'sociallogin', function(response) {
@@ -74,5 +81,13 @@
             });
             
 		</script>
+                <script type="text/html" id="loginradiuscustom_tmpl_MOBILE">
+    <span class="lr-provider-label lr-sl-shaded-brick-button lr-flat-<#=Name.toLowerCase()#>"
+onclick="window.location.href='<#= Endpoint #>&is_access_token=true&callback=<#= window.location.href.split('#')[0] #>&callbacktype=hash';"
+title="Sign up with <#= Name #> Mobile" alt="Sign in with <#=Name#> Mobile" >
+<span class="lr-sl-icon lr-sl-icon-<#=Name.toLowerCase()#>"></span>
+Sign up with <#=Name#> Mobile
+    </span>
+</script>
 	</body>
 </html>

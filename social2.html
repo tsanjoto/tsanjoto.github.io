@@ -37,6 +37,15 @@
                                                $ui.noofcolumns = 5;
                                                $ui.lrinterfacebackground = "";
                                                $ui.is_access_token = 1;
+                                               
+                                               if(navigator.userAgent.match('CriOS')||navigator.userAgent.match('iPhone')){
+                                                    // Is Chrome iOS or iPhone
+                                                    $ui.templatename = "loginradiuscustom_tmpl_MOBILE";
+                                                } else {
+                                                    $ui.templatename = "interfacecontainerdiv";
+                                                }
+                                                raasoption.hashTemplate = true;
+                                               
                                                LoginRadius_SocialLogin.init(loginRadiusOptions);
                                                });
                                                
@@ -73,6 +82,14 @@
             </script>
         
         <script src="//cdn.loginradius.com/hub/prod/js/lr-google-analyitcs.js" type="text/javascript"></script>
+        <script type="text/html" id="loginradiuscustom_tmpl_MOBILE">
+    <span class="lr-provider-label lr-sl-shaded-brick-button lr-flat-<#=Name.toLowerCase()#>"
+onclick="window.location.href='<#= Endpoint #>&is_access_token=true&callback=<#= window.location.href.split('#')[0] #>&callbacktype=hash';"
+title="Sign up with <#= Name #> Mobile" alt="Sign in with <#=Name#> Mobile" >
+<span class="lr-sl-icon lr-sl-icon-<#=Name.toLowerCase()#>"></span>
+Sign up with <#=Name#> Mobile
+    </span>
+</script>
     </head>
     <body>
         <h1>Google Analytics Walkthrough</h1>
