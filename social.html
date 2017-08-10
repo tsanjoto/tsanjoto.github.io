@@ -29,7 +29,14 @@
 		        <h3><#=Name#></h3>
 		    </a>
 		</script>
-
+        <script type="text/html" id="loginradiuscustom_tmpl_MOBILE">
+            <span class="lr-provider-label lr-sl-shaded-brick-button lr-flat-<#=Name.toLowerCase()#>"
+        onclick="window.location.href='<#= Endpoint #>&is_access_token=true&callback=<#= window.location.href.split('#')[0] #>&callbacktype=hash';"
+        title="Sign up with <#= Name #> Mobile" alt="Sign in with <#=Name#> Mobile" >
+        <span class="lr-sl-icon lr-sl-icon-<#=Name.toLowerCase()#>"></span>
+        Sign up with <#=Name#> Mobile
+            </span>
+        </script>
 		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script src="option.js"></script>
 		<script type="text/javascript">
@@ -81,13 +88,6 @@
             });
             
 		</script>
-                <script type="text/html" id="loginradiuscustom_tmpl_MOBILE">
-    <span class="lr-provider-label lr-sl-shaded-brick-button lr-flat-<#=Name.toLowerCase()#>"
-onclick="window.location.href='<#= Endpoint #>&is_access_token=true&callback=<#= window.location.href.split('#')[0] #>&callbacktype=hash';"
-title="Sign up with <#= Name #> Mobile" alt="Sign in with <#=Name#> Mobile" >
-<span class="lr-sl-icon lr-sl-icon-<#=Name.toLowerCase()#>"></span>
-Sign up with <#=Name#> Mobile
-    </span>
-</script>
+        
 	</body>
 </html>
